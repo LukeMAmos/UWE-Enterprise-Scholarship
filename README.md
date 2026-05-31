@@ -4,6 +4,9 @@ As part of the UWE Enterprise Summer Scholarship 2026, I began research and deve
 
 ## Features 
 -
+## Project Images 
+
+![Image of device](path/to/image.png)
 
 ## Built using 
 - JUCE Framework 
