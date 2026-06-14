@@ -3,6 +3,7 @@
 #include <JuceHeader.h>
 #include "tiny_obj_loader.h"
 #include "SynthAudioSource.h"
+#include "LookAndFeel.h"
 
 //==============================================================================
 /*
@@ -45,6 +46,7 @@ private:
     //==============================================================================
     // Your private member variables go here...
     
+    CustomLookAndFeel customLookAndFeel ; 
     
     //Rendering 3D Models
     tinyobj::attrib_t  meshAttrib;

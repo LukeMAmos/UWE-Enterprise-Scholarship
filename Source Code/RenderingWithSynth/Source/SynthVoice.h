@@ -46,11 +46,6 @@ public:
     
     void controllerMoved(int controllerNumber, int newValue) override;
     
-    void setMapping(SynthParameter param, int ccNumber)
-    {
-        ccMapping[param] = ccNumber;
-    }
-    
     void updateParameters(); 
     
 private:

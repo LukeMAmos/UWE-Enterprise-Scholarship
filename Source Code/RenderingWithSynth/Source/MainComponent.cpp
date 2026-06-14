@@ -8,7 +8,7 @@ MainComponent::MainComponent()
     setOpaque(true);
     
     //Custom look and feel 
-    //setLookAndFeel(<#LookAndFeel *newLookAndFeel#>)
+    setLookAndFeel(&customLookAndFeel); 
     
     openGLContext.setOpenGLVersionRequired(juce::OpenGLContext::openGL3_2);
     
