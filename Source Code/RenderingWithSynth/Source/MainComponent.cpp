@@ -7,6 +7,9 @@ MainComponent::MainComponent()
     setSize (600, 400);
     setOpaque(true);
     
+    //Custom look and feel 
+    //setLookAndFeel(<#LookAndFeel *newLookAndFeel#>)
+    
     openGLContext.setOpenGLVersionRequired(juce::OpenGLContext::openGL3_2);
     
     openGLContext.attachTo(*this);
@@ -236,6 +239,9 @@ void MainComponent::render()
 }
 
 void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source , const juce::MidiMessage& message){
+    
+    //Midi messages coming from the devcie would be X Y Z , midi cc messages , triggering the midi messages on etc etc , the midi cc mesages need to be re-interpreted before passing through to the synth using the synth parameter enum. 
+    
     
     //Pass the midiMessages through to the synthesiser to be used
     synthAudioSource.addMidiMessage(message);

@@ -5,7 +5,6 @@
   <MAINGROUP id="v4XWV8" name="RenderingWithSynth">
     <GROUP id="{7214896A-DA8F-6DEA-1CAC-4F7D9ED226EF}" name="Source">
       <FILE id="iUjXVN" name="Filters.h" compile="0" resource="0" file="Source/Filters.h"/>
-      <FILE id="rtPHwr" name="DelayLine.cpp" compile="1" resource="0" file="Source/DelayLine.cpp"/>
       <FILE id="ZbV0V3" name="DelayLine.h" compile="0" resource="0" file="Source/DelayLine.h"/>
       <FILE id="ZFNohb" name="SynthEffects.h" compile="0" resource="0" file="Source/SynthEffects.h"/>
       <FILE id="xdzNFS" name="SynthAudioSource.cpp" compile="1" resource="0"

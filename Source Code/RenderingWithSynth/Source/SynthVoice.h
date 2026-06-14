@@ -63,7 +63,7 @@ private:
     Distortion distortion; 
     
     
-    //Variables used for mapping the midi cc messages to their values
+    //Variables used for mapping the midi cc messages to their values eg filter cutoff is 74
     int ccMapping[NumParameters] = { 74, 71, 91, 93, 94, 96, 95, 97, 98 };
     float parameters[NumParameters];
     
