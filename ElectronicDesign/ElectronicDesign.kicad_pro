@@ -743,15 +743,24 @@
         "filename": "ElectronicDesign.kicad_sch",
         "name": "Root",
         "uuid": "2b7e9e7e-f1cc-4cc1-be9c-0cd42b7940da"
+      },
+      {
+        "filename": "sheet_2.kicad_sch",
+        "name": "Sheet 2",
+        "uuid": "9c93a0b0-0bdd-47a5-af12-31cbc6ea301e"
       }
     ],
-    "used_designators": "",
+    "used_designators": "USBC2,TP7-12,TP18-20,ELE12-20,U8-16,#PWR32-64,C10-18,D2,R8-14,#FLG3-4",
     "variants": []
   },
   "sheets": [
     [
       "2b7e9e7e-f1cc-4cc1-be9c-0cd42b7940da",
       "Root"
+    ],
+    [
+      "9c93a0b0-0bdd-47a5-af12-31cbc6ea301e",
+      "Sheet 2"
     ]
   ],
   "text_variables": {},

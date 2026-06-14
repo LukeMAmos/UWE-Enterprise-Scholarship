@@ -22,6 +22,8 @@
       <FILE id="et3AXp" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
     </GROUP>
+    <FILE id="LVp7iB" name="BitcountPropSingle.ttf" compile="0" resource="1"
+          file="../../../../../Documents/Fonts/BitcountPropSingle.ttf"/>
   </MAINGROUP>
   <MODULES>
     <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
@@ -64,5 +66,27 @@
         <MODULEPATH id="juce_dsp" path="../../../../Documents/JUCE/modules"/>
       </MODULEPATHS>
     </XCODE_MAC>
+    <XCODE_IPHONE targetFolder="Builds/iOS">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug"/>
+        <CONFIGURATION isDebug="0" name="Release"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="/Users/lukeamos/Documents/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="/Users/lukeamos/Documents/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="/Users/lukeamos/Documents/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="/Users/lukeamos/Documents/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors_headless" path="/Users/lukeamos/Documents/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="/Users/lukeamos/Documents/JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="/Users/lukeamos/Documents/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="/Users/lukeamos/Documents/JUCE/modules"/>
+        <MODULEPATH id="juce_dsp" path="/Users/lukeamos/Documents/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="/Users/lukeamos/Documents/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="/Users/lukeamos/Documents/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="/Users/lukeamos/Documents/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="/Users/lukeamos/Documents/JUCE/modules"/>
+        <MODULEPATH id="juce_opengl" path="/Users/lukeamos/Documents/JUCE/modules"/>
+      </MODULEPATHS>
+    </XCODE_IPHONE>
   </EXPORTFORMATS>
 </JUCERPROJECT>

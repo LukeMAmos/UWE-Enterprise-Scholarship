@@ -53,6 +53,8 @@ void MainComponent::initialise()
     juce::gl::glEnable(juce::gl::GL_DEPTH_TEST);
     juce::gl::glDepthFunc(juce::gl::GL_LESS);
 
+    
+    //In the final project this data needs to be read from binary so that it can be used across devices 
     tinyobj::ObjReader reader;
     
     if(!reader.ParseFromFile("/Users/lukeamos/Desktop/SquishCUB.obj")){
@@ -240,7 +242,7 @@ void MainComponent::render()
 
 void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source , const juce::MidiMessage& message){
     
-    //Midi messages coming from the devcie would be X Y Z , midi cc messages , triggering the midi messages on etc etc , the midi cc mesages need to be re-interpreted before passing through to the synth using the synth parameter enum. 
+    //Midi messages are sent through straight to the synth as well as sending through to the visual midi buffer where it is used to update the 3D model of the device
     
     
     //Pass the midiMessages through to the synthesiser to be used
@@ -312,6 +314,8 @@ MainComponent::~MainComponent()
     {
         audioDeviceManager.removeMidiInputDeviceCallback(device.identifier, this);
     }
+    
+    setLookAndFeel(nullptr); 
     
 }
 

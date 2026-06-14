@@ -90,16 +90,7 @@ void SynthVoice::pitchWheelMoved(int newValue){
 
 void SynthVoice::controllerMoved(int controllerNumber, int newValue){
     
-    for (int param = 0; param < NumParameters; param++)
-    {
-        //Use the param number to find the variable
-        if (controllerNumber == ccMapping[param])
-        {
-            
-            parameters[param] = newValue;
-            break;
-        }
-    }
+    //Each CC message is linked to a continouus control input which is sent via midi , eg XYZ components from an accelerometer , these may come through on midi CC 0 1 2 , but its up to the user to decide what controls what , In this method it takes what the user has decided to map that message to and updates the array of floats for that specific parameter
     
     updateParameters();
 }
