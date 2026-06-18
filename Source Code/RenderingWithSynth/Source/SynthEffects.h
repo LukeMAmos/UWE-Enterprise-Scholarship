@@ -20,11 +20,7 @@ public:
     
     virtual ~AudioEffect() = default;
     
-    virtual void prepare() = 0 ;
-    
-    virtual void setParameters() = 0 ;
-    
-    virtual float process() = 0;
+    virtual float process( float input ) = 0;
     
 private:
     

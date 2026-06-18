@@ -57,7 +57,7 @@ private:
     Reverb reverb;
     Distortion distortion; 
     
-    
+    std::vector<AudioEffect*> effectsVector{&biquadFilter , &reverb , &distortion};
     
     
     //We have an array of floats holding the current value linked to that parameter 
