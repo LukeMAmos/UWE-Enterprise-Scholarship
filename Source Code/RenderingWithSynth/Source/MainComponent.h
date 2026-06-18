@@ -4,6 +4,7 @@
 #include "tiny_obj_loader.h"
 #include "SynthAudioSource.h"
 #include "LookAndFeel.h"
+#include "DraggableComponent.h"
 
 //==============================================================================
 /*

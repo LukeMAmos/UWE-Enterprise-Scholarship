@@ -4,6 +4,8 @@
               addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" headerPath="/Users/lukeamos/Desktop/JUCE/RenderingCube /Source/tiny_obj_loader.h">
   <MAINGROUP id="v4XWV8" name="RenderingWithSynth">
     <GROUP id="{7214896A-DA8F-6DEA-1CAC-4F7D9ED226EF}" name="Source">
+      <FILE id="rh9g9C" name="DraggableComponent.h" compile="0" resource="0"
+            file="Source/DraggableComponent.h"/>
       <FILE id="OGSsMk" name="LookAndFeel.h" compile="0" resource="0" file="Source/LookAndFeel.h"/>
       <FILE id="iUjXVN" name="Filters.h" compile="0" resource="0" file="Source/Filters.h"/>
       <FILE id="ZbV0V3" name="DelayLine.h" compile="0" resource="0" file="Source/DelayLine.h"/>
