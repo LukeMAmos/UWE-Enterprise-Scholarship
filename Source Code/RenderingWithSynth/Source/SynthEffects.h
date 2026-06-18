@@ -61,7 +61,7 @@ public:
         
     }
     
-    float process(float input){
+    float process(float input) override {
         
         juce::ScopedNoDenormals noDenormals;
         
@@ -106,6 +106,23 @@ private:
 
 //==============================================================================
 
+//Using the delay line circular buffer method but with wet dry level implementation , additionally inherits from Audio Effects for use in the the movable order  vector 
+class Delay : public AudioEffect{
+    
+public:
+    
+    void prepare();
+    
+    void setParameters();
+    
+    float process(float input) override; 
+    
+private:
+    
+};
+
+//==============================================================================
+
 //A distortion class which has processes for differnet forms of distortion, hard clipping soft clipping ,  bit crush and then a single process block that uses an enum to select the type of distortion wanted
 
 enum distortionType{
@@ -137,7 +154,7 @@ public:
         
     }
     
-    float process(float input){
+    float process(float input) override {
         
         
         float output = 0.0f;
@@ -299,7 +316,7 @@ public:
     }
     
     
-    float process(float input){
+    float process(float input) override {
         
         //y(n) = a0 x(n) + a1 (n-1) + a2 (x-2) - b1 y(n-1) - b2 y(n-2)
         //Filter coeffients are calculated from cutoff , resonance and sampleRate, a biquad filter can act as both a lowpass and a highpass filter dependant on the input values

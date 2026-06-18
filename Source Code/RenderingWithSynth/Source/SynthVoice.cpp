@@ -66,16 +66,20 @@ void SynthVoice::renderNextBlock(juce::AudioBuffer<float>& outputBuffer , int st
     
     adsr.applyEnvelopeToBuffer(outputBuffer, startSample, numSamples);
     
-    for(int n = 0 ; n < outputBuffer.getNumChannels(); n++){ //Apply audio effects to the synth output 
+    for(int n = 0 ; n < outputBuffer.getNumChannels(); n++){ //Apply audio effects to the synth output
         
         for(int i = startSample; i < startSample + numSamples ; i++){
             
-            float effectOut = biquadFilter.process(outputBuffer.getSample(n, i));
-            
-            effectOut = distortion.process(effectOut);
-            
-            effectOut = reverb.process(effectOut);
-            
+            //Passing the audio through the effects in a single order
+            float effectOut = outputBuffer.getSample(n, i);
+        
+            for (auto &effect : effectsVector){
+                //For each of the effects in effect Vector , as the process block is the same it doesnt need to be cast back into its specific type
+                //the new effect out is equal to the current effect out processed by teh next effect in the block 
+                effectOut = effect->process(effectOut);
+                
+            }
+        
             outputBuffer.setSample(n, i, effectOut);
         }
     }
