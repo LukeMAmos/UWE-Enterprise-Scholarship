@@ -58,6 +58,8 @@ private:
     Distortion distortion; 
     
     
+    
+    
     //We have an array of floats holding the current value linked to that parameter 
     float parameters[NumParameters];
     
