@@ -7,7 +7,8 @@ MainComponent::MainComponent()
     setSize (600, 400);
     setOpaque(true);
     
-    //Custom look and feel 
+    
+    //Custom look and feel
     setLookAndFeel(&customLookAndFeel); 
     
     openGLContext.setOpenGLVersionRequired(juce::OpenGLContext::openGL3_2);
@@ -244,7 +245,6 @@ void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source , const ju
     
     //Midi messages are sent through straight to the synth as well as sending through to the visual midi buffer where it is used to update the 3D model of the device
     
-    
     //Pass the midiMessages through to the synthesiser to be used
     synthAudioSource.addMidiMessage(message);
     
@@ -315,7 +315,7 @@ MainComponent::~MainComponent()
         audioDeviceManager.removeMidiInputDeviceCallback(device.identifier, this);
     }
     
-    setLookAndFeel(nullptr); 
+    setLookAndFeel(nullptr);
     
 }
 
@@ -353,4 +353,10 @@ void MainComponent::resized()
     // This is called when the MainComponent is resized.
     // If you add any child components, this is where you should
     // update their positions.
+    
+    
+    
+    
+    
+    
 }

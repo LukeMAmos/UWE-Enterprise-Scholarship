@@ -39,9 +39,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.0,
-          "height": 1.2,
-          "width": 0.6
+          "drill": 0.849986,
+          "height": 1.4,
+          "width": 1.5
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -76,52 +76,7 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [
-        [
-          "duplicate_footprints|120000000|79500000|7bd4fd08-fcac-4291-8ef3-60d661160414|203efec9-9fd2-4764-8abb-e5de38f3aad4",
-          ""
-        ],
-        [
-          "duplicate_footprints|81500000|79500000|cd537c6d-8600-4d46-9567-03685a5e187e|203efec9-9fd2-4764-8abb-e5de38f3aad4",
-          ""
-        ],
-        [
-          "extra_footprint|108000000|129500000|203efec9-9fd2-4764-8abb-e5de38f3aad4|00000000-0000-0000-0000-000000000000",
-          ""
-        ],
-        [
-          "extra_footprint|120000000|79500000|7bd4fd08-fcac-4291-8ef3-60d661160414|00000000-0000-0000-0000-000000000000",
-          ""
-        ],
-        [
-          "extra_footprint|81500000|79500000|cd537c6d-8600-4d46-9567-03685a5e187e|00000000-0000-0000-0000-000000000000",
-          ""
-        ],
-        [
-          "padstack|111932139|123351432|96e2ef77-f72d-4bfe-aefa-18a09a449f9a|00000000-0000-0000-0000-000000000000",
-          ""
-        ],
-        [
-          "padstack|116796431|120192526|e002b2ec-236a-446c-928b-f1e0d897731b|00000000-0000-0000-0000-000000000000",
-          ""
-        ],
-        [
-          "silk_over_copper|85600000|125150000|262b2f46-6d05-403f-a961-f9208c2b9b83|f7e85ac6-d925-4707-a4cc-8035f9a7205f",
-          ""
-        ],
-        [
-          "silk_over_copper|88400000|125150000|31c6b582-93fd-4c1b-9e10-1e20e8470416|af6ea94f-2617-41ec-a5ad-41963d2d9917",
-          ""
-        ],
-        [
-          "silk_overlap|74650000|110871428|523b495b-cee8-4e83-9202-0c4fc1b0b959|7d98008b-5079-4d92-9baf-64afc6e4b6e9",
-          ""
-        ],
-        [
-          "silk_overlap|86000000|121614342|8e41486d-dfbe-4bb6-94f8-34c783c0caef|d9976c21-73a7-4139-a661-22fcb0b9da40",
-          ""
-        ]
-      ],
+      "drc_exclusions": [],
       "meta": {
         "version": 2
       },
@@ -191,13 +146,13 @@
       },
       "rules": {
         "max_error": 0.005,
-        "min_clearance": 0.1,
+        "min_clearance": 0.0,
         "min_connection": 0.0,
-        "min_copper_edge_clearance": 0.1,
+        "min_copper_edge_clearance": 0.5,
         "min_groove_width": 0.0,
         "min_hole_clearance": 0.1,
         "min_hole_to_hole": 0.25,
-        "min_microvia_diameter": 0.127,
+        "min_microvia_diameter": 0.2,
         "min_microvia_drill": 0.1,
         "min_resolved_spokes": 2,
         "min_silk_clearance": 0.0,
@@ -205,9 +160,9 @@
         "min_text_thickness": 0.08,
         "min_through_hole_diameter": 0.3,
         "min_track_width": 0.1,
-        "min_via_annular_width": 0.0,
+        "min_via_annular_width": 0.1,
         "min_via_diameter": 0.5,
-        "solder_mask_to_copper_clearance": 0.005,
+        "solder_mask_to_copper_clearance": 0.0,
         "use_height_for_length_calcs": true
       },
       "teardrop_options": [
@@ -256,9 +211,8 @@
       ],
       "track_widths": [
         0.0,
-        0.08,
-        0.1,
-        0.15
+        0.2,
+        2.0
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -301,7 +255,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": "1"
+      "sch_revision": ""
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -549,14 +503,14 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "ElectronicDesign.kicad_pro",
+    "filename": "XIAODESIGN.kicad_pro",
     "version": 3
   },
   "net_settings": {
     "classes": [
       {
         "bus_width": 12,
-        "clearance": 0.095,
+        "clearance": 0.1,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -567,11 +521,25 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.17,
+        "track_width": 0.1,
         "tuning_profile": "",
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
+      },
+      {
+        "clearance": 0.1,
+        "diff_pair_width": 0.2,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "Battery",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.15,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3
       }
     ],
     "meta": {
@@ -585,7 +553,7 @@
     "last_paths": {
       "idf": "",
       "netlist": "",
-      "plot": "/Users/lukeamos/Desktop/GerberOut/",
+      "plot": "",
       "specctra_dsn": "",
       "vrml": ""
     },
@@ -659,48 +627,12 @@
           "label": "Datasheet",
           "name": "Datasheet",
           "show": true
-        },
-        {
-          "group_by": false,
-          "label": "Manufacturer",
-          "name": "Manufacturer",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "MPN",
-          "name": "MPN",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Sim.Pins",
-          "name": "Sim.Pins",
-          "show": false
-        },
-        {
-          "group_by": true,
-          "label": "LCSC Part",
-          "name": "LCSC Part",
-          "show": true
-        },
-        {
-          "group_by": false,
-          "label": "Description",
-          "name": "Description",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "#",
-          "name": "${ITEM_NUMBER}",
-          "show": false
         }
       ],
       "filter_string": "",
       "group_symbols": true,
       "include_excluded_from_bom": true,
-      "name": "",
+      "name": "Default Editing",
       "sort_asc": true,
       "sort_field": "Reference"
     },
@@ -740,27 +672,18 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "ElectronicDesign.kicad_sch",
-        "name": "Root",
-        "uuid": "2b7e9e7e-f1cc-4cc1-be9c-0cd42b7940da"
-      },
-      {
-        "filename": "sheet_2.kicad_sch",
-        "name": "Sheet 2",
-        "uuid": "9c93a0b0-0bdd-47a5-af12-31cbc6ea301e"
+        "filename": "XIAODESIGN.kicad_sch",
+        "name": "XIAODESIGN",
+        "uuid": "cb6cf7ce-84a2-4ae5-9e83-7d4833b109c8"
       }
     ],
-    "used_designators": "",
+    "used_designators": "R4-7,#PWR1,#PWR4,#PWR9,U1",
     "variants": []
   },
   "sheets": [
     [
-      "2b7e9e7e-f1cc-4cc1-be9c-0cd42b7940da",
-      "Root"
-    ],
-    [
-      "9c93a0b0-0bdd-47a5-af12-31cbc6ea301e",
-      "Sheet 2"
+      "cb6cf7ce-84a2-4ae5-9e83-7d4833b109c8",
+      "XIAODESIGN"
     ]
   ],
   "text_variables": {},

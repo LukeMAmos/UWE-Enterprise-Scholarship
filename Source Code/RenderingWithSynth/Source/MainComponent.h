@@ -73,13 +73,12 @@ private:
     juce::MidiBuffer visMidiBuffer;
     juce::CriticalSection midiMutex;
     
-    //Passing data safely
+    //Passing data safely through to the visualising midi block 
     void addVisMidiMessage(const juce::MidiMessage& message){
         
         juce::ScopedLock lock(midiMutex);
         visMidiBuffer.addEvent(message, 0);
     }
-    
     
     
     
