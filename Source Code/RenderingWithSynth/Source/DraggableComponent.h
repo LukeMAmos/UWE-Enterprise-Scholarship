@@ -6,8 +6,11 @@
 class DraggableComponent : public juce::Component
 {
     
-    public:
-    DraggableComponent(){
+public:
+    
+    DraggableComponent(String name = "Draggable Component"){
+        
+        
         setWantsKeyboardFocus(true);
     };
     
@@ -30,6 +33,7 @@ class DraggableComponent : public juce::Component
         
         g.setColour (juce::Colours::blue);
         
+        g.drawText(name, 30, 30, 30, 10, juce::Justification::centredLeft);
         g.drawRoundedRectangle(0, 0, 100, 100, 8, 8);
         
     }
@@ -49,7 +53,7 @@ class DraggableComponent : public juce::Component
     juce::Slider slider;
 private:
     
-    
+    String name;
     juce::ComponentDragger dragger;
     
 };

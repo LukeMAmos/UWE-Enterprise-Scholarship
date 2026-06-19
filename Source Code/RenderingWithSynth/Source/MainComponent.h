@@ -81,7 +81,8 @@ private:
         visMidiBuffer.addEvent(message, 0);
     }
     
-    DraggableComponent dragComp ; 
+    //Vector of draggable components
+    DraggableComponent draggableComponents[3] = {DraggableComponent("Filter") , DraggableComponent("Reverb") , DraggableComponent("Distortion")};
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };

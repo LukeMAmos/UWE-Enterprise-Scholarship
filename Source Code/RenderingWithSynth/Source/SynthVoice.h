@@ -28,6 +28,7 @@ enum SynthParameter
     NumParameters //If adding more paramters add them above , number parameters auto updates as you add by increasing the number
 };
 
+
 class SynthVoice : public juce::SynthesiserVoice{
     
 public:
@@ -53,10 +54,12 @@ private:
     juce::dsp::Oscillator<float> osc;
     juce::ADSR adsr;
     
-    BiquadFilter biquadFilter;
-    Reverb reverb;
-    Distortion distortion; 
+    //Effect instancing
+    class BiquadFilter biquadFilter;
+    class Reverb reverb;
+    class Distortion distortion;
     
+    //Implementating a reordable system for the effects
     std::vector<AudioEffect*> effectsVector{&biquadFilter , &reverb , &distortion};
     
     
