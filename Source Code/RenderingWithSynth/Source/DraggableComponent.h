@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 #include <JuceHeader.h>
-
+//DraggableComponent for reordering the synth effects 
 class DraggableComponent : public juce::Component
 {
     
@@ -30,7 +30,7 @@ class DraggableComponent : public juce::Component
         
         g.setColour (juce::Colours::blue);
         
-        g.fillEllipse(0, 0, diameter, diameter);
+        g.drawRoundedRectangle(0, 0, 100, 100, 8, 8);
         
     }
     
@@ -42,14 +42,13 @@ class DraggableComponent : public juce::Component
     
     
     
-    int getPositionXCentre(){return getX() + diameter / 2;};
-    int getPositionYCentre(){return getY() + diameter / 2;};
+    int getPositionXCentre(){return getX() + 100 / 2;};
+    int getPositionYCentre(){return getY() + 100 / 2;};
     
     bool mDown = false;
     juce::Slider slider;
 private:
     
-    int diameter = 100;
     
     juce::ComponentDragger dragger;
     
