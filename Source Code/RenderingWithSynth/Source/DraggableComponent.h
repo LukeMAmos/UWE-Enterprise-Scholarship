@@ -8,9 +8,9 @@ class DraggableComponent : public juce::Component
     
 public:
     
-    DraggableComponent(String name = "Draggable Component"){
+    DraggableComponent(String nameIn = "Draggable Component"){
         
-        
+        name = nameIn ;
         setWantsKeyboardFocus(true);
     };
     
@@ -29,11 +29,11 @@ public:
     
     void paint(juce::Graphics& g )override{
         
-        std::cout<<"Here is myX :"<<getX() <<"\n";
+        std::cout<<"Here is myX :"<<getX() <<"  : "<< name << "\n";
         
         g.setColour (juce::Colours::blue);
         
-        g.drawText(name, 30, 30, 30, 10, juce::Justification::centredLeft);
+        g.drawText(name, 0, 0, 50, 50, juce::Justification::centredLeft);
         g.drawRoundedRectangle(0, 0, 100, 100, 8, 8);
         
     }

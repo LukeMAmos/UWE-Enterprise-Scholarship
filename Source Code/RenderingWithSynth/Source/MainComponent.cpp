@@ -7,7 +7,12 @@ MainComponent::MainComponent()
     setSize (600, 400);
     setOpaque(true);
     
-    addAndMakeVisible(dragComp);
+    for(auto& comp : draggableComponents){
+        
+        addAndMakeVisible(comp);
+        
+    }
+
     
     //Custom look and feel
     setLookAndFeel(&customLookAndFeel); 
@@ -355,9 +360,10 @@ void MainComponent::resized()
     // If you add any child components, this is where you should
     // update their positions.
     
-    
-    dragComp.setBounds(100, 100, 100, 100);
-    
+    for(auto& comp : draggableComponents){
+        
+        comp.setBounds(100, 100, 100, 100);
+    }
     
     
 }
