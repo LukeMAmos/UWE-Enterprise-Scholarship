@@ -3,17 +3,12 @@
 #include <stdio.h>
 #include <JuceHeader.h>
 
-class draggableComponent : public juce::Component
+class DraggableComponent : public juce::Component
 {
     
     public:
-    draggableComponent(){
+    DraggableComponent(){
         setWantsKeyboardFocus(true);
-        
-        slider.setSliderStyle(juce::Slider::SliderStyle::RotaryVerticalDrag);
-        slider.setTextBoxStyle(juce::Slider::NoTextBox, false, 0, 0);
-        
-        addAndMakeVisible(slider);
     };
     
     void mouseDown(const juce::MouseEvent& event) override {

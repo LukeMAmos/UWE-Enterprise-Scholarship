@@ -7,6 +7,7 @@ MainComponent::MainComponent()
     setSize (600, 400);
     setOpaque(true);
     
+    addAndMakeVisible(dragComp);
     
     //Custom look and feel
     setLookAndFeel(&customLookAndFeel); 
@@ -355,7 +356,7 @@ void MainComponent::resized()
     // update their positions.
     
     
-    
+    dragComp.setBounds(100, 100, 100, 100);
     
     
     

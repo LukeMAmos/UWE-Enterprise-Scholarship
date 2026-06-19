@@ -81,7 +81,7 @@ private:
         visMidiBuffer.addEvent(message, 0);
     }
     
-    
+    DraggableComponent dragComp ; 
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };
