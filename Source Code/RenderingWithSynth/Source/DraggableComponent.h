@@ -17,7 +17,7 @@ public:
         
         for(auto& comp : ownedComponents){
             
-            addAndMakeVisible(comp);
+            addAndMakeVisible(*comp);
         }
         
     };
