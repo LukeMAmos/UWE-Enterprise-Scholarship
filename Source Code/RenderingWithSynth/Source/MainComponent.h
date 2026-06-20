@@ -47,7 +47,7 @@ private:
     //==============================================================================
     // Your private member variables go here...
     
-    CustomLookAndFeel customLookAndFeel ; 
+    CustomLookAndFeel customLookAndFeel ;
     
     //Rendering 3D Models
     tinyobj::attrib_t  meshAttrib;
@@ -56,7 +56,7 @@ private:
     
     float rotationAngleLR = 0.0f;
     float rotationAngleUD = 0.0f;
-    float rotationAngleCW = 0.0f; 
+    float rotationAngleCW = 0.0f;
     
     GLuint vbo = 0;
     GLuint vao = 0;
@@ -74,7 +74,7 @@ private:
     juce::MidiBuffer visMidiBuffer;
     juce::CriticalSection midiMutex;
     
-    //Passing data safely through to the visualising midi block 
+    //Passing data safely through to the visualising midi block
     void addVisMidiMessage(const juce::MidiMessage& message){
         
         juce::ScopedLock lock(midiMutex);
@@ -83,6 +83,9 @@ private:
     
     //Vector of draggable components
     DraggableComponent draggableComponents[3] = {DraggableComponent("Filter") , DraggableComponent("Reverb") , DraggableComponent("Distortion")};
+    //Positions of the draggableComponents
+    
+    
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };

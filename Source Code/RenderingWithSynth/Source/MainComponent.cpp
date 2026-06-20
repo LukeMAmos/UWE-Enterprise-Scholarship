@@ -297,6 +297,12 @@ void MainComponent::mouseDown (const juce::MouseEvent& event)
     cubeColor[1] = random.nextFloat(); // Green
     cubeColor[2] = random.nextFloat(); // Blue
     cubeColor[3] = 1.0f;               // Alpha (fully opaque)
+    
+    
+    //On every cick update the arrangement of the effects
+    
+    synthAudioSource.arrangeEffects(); 
+    
 }
 
 

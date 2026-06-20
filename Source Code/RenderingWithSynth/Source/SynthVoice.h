@@ -13,20 +13,7 @@
 #include "Filters.h"
 #include "SynthEffects.h"
 
-//Keeps a list of each of the parameters exposed to the user , it used so that the user can remap the controls of the midi controller
-enum SynthParameter
-{
-    FilterCutoff,
-    FilterResonance,
-    ReverbRoomSize,
-    ReverbCutoff,
-    FilterBiquadType,
-    ReverbWetDry,
-    ReverbCoefficient,
-    DistortionAmount,
-    DistortionTypeVal,
-    NumParameters //If adding more paramters add them above , number parameters auto updates as you add by increasing the number
-};
+
 
 
 class SynthVoice : public juce::SynthesiserVoice{
@@ -54,17 +41,6 @@ private:
     juce::dsp::Oscillator<float> osc;
     juce::ADSR adsr;
     
-    //Effect instancing
-    class BiquadFilter biquadFilter;
-    class Reverb reverb;
-    class Distortion distortion;
-    
-    //Implementating a reordable system for the effects
-    std::vector<AudioEffect*> effectsVector{&biquadFilter , &reverb , &distortion};
-    
-    
-    //We have an array of floats holding the current value linked to that parameter 
-    float parameters[NumParameters];
     
     
 };
