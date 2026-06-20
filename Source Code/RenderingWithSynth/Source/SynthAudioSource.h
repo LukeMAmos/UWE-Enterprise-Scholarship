@@ -28,9 +28,9 @@ enum SynthParameter
 };
 
 class SynthAudioSource : public juce::AudioSource{
-
     
-public:
+    
+    public:
     SynthAudioSource();
     
     void prepareToPlay(int samplesPerBlockExpected ,double sampleRate ) override;
@@ -40,13 +40,13 @@ public:
     //Passing midiMessages through to the midi buffer safely
     void addMidiMessage(const juce::MidiMessage& message){
         
-        midiBuffer.addEvent(message, 0); 
+        midiBuffer.addEvent(message, 0);
     }
     juce::Synthesiser& getSynth(){return synth;}
     
     void updateParameters();
     
-private:
+    private:
     
     juce::Synthesiser synth;
     
@@ -57,11 +57,14 @@ private:
     float parameters[NumParameters];
     
     //Effect instancing
-    class BiquadFilter biquadFilter;
-    class Reverb reverb;
-    class Distortion distortion;
+    class BiquadFilter biquadFilterL;
+    class BiquadFilter biquadFilterR;
+    class Reverb reverbL;
+    class Reverb reverbR;
+    class Distortion distortionL;
+    class Distortion distortionR;
     
     //Implementating a reordable system for the effects
-    std::vector<AudioEffect*> effectsVector{&biquadFilter , &reverb , &distortion};
+    std::vector<std::vector<AudioEffect*>> effectsVectorPerChannel {{&biquadFilterL , &reverbL , &distortionL} , {&biquadFilterR , &reverbR , &distortionR}};
 
 };

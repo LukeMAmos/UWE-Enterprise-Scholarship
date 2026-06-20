@@ -7,11 +7,19 @@ class DraggableComponent : public juce::Component
 {
     
 public:
-    
-    DraggableComponent(String nameIn = "Draggable Component"){
+    //Each of the components needs specific controls , so they share a common type of components
+    DraggableComponent(String nameIn = "Draggable Component" , std::vector<std::unique_ptr<juce::Component>> comps = {}){
         
         name = nameIn ;
         setWantsKeyboardFocus(true);
+        
+        ownedComponents = std::move(comps); //transfer ownership to the class vector
+        
+        for(auto& comp : ownedComponents){
+            
+            addAndMakeVisible(comp);
+        }
+        
     };
     
     void mouseDown(const juce::MouseEvent& event) override {
@@ -51,9 +59,12 @@ public:
     
     bool mDown = false;
     juce::Slider slider;
+    
 private:
     
     String name;
     juce::ComponentDragger dragger;
     
+    std::vector<std::unique_ptr<juce::Component>> ownedComponents;
+
 };
