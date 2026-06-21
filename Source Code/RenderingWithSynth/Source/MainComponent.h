@@ -80,9 +80,18 @@ private:
         juce::ScopedLock lock(midiMutex);
         visMidiBuffer.addEvent(message, 0);
     }
+    //Vectors of components for the draggable componenets
+    
+    
+    std::vector<std::unique_ptr<juce::Component>> FilterComp;
+    std::vector<std::unique_ptr<juce::Component>> ReverbComp;
+    std::vector<std::unique_ptr<juce::Component>> DistortionComp;
+    
     
     //Vector of draggable components
-    DraggableComponent draggableComponents[3] = {DraggableComponent("Filter") , DraggableComponent("Reverb") , DraggableComponent("Distortion")};
+    std::vector<DraggableComponent> draggableComponents;
+    
+    
     //Positions of the draggableComponents
     
     

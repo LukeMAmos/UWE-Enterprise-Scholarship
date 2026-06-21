@@ -48,7 +48,7 @@ public:
     
     void resized() override{
         
-        slider.setBounds(( getWidth() /2 ) - 35, (getHeight() / 2) - 35 , 70, 70);
+    
         
     };
     
@@ -58,7 +58,6 @@ public:
     int getPositionYCentre(){return getY() + 100 / 2;};
     
     bool mDown = false;
-    juce::Slider slider;
     
 private:
     
