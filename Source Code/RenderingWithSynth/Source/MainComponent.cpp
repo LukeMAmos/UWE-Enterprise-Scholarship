@@ -55,7 +55,7 @@ MainComponent::MainComponent()
     draggableComponents.emplace_back("Reverb" , std::move(ReverbComp));
     draggableComponents.emplace_back("Distortion" , std::move(DistortionComp));
     
-    //Make the draggable components visible 
+    
     for(auto& comp : draggableComponents){
         
         addAndMakeVisible(comp);
