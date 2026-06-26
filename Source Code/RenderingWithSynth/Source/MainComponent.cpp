@@ -10,6 +10,10 @@ MainComponent::MainComponent()
     //Custom look and feel
     setLookAndFeel(&customLookAndFeel); 
     
+    //Buttons for switching pages
+    addAndMakeVisible(ModelButton);
+    addAndMakeVisible(SynthEffectButton);
+    addAndMakeVisible(MappingButton);
     
     setWantsKeyboardFocus(true);
     
@@ -34,30 +38,7 @@ MainComponent::MainComponent()
         
     }
     
-    //Set up the UI components and emplace inside the respected draggable component
-    
-    FilterComp.push_back(std::make_unique<juce::Slider>("Filter Cutoff"));
-    FilterComp.push_back(std::make_unique<juce::Slider>("Filter Resonance"));
-    FilterComp.push_back(std::make_unique<juce::ComboBox>("FilterBiquadType"));
-    
-    ReverbComp.push_back(std::make_unique<juce::Slider>("Room Size"));
-    ReverbComp.push_back(std::make_unique<juce::Slider>("ReverbCutoff"));
-    ReverbComp.push_back(std::make_unique<juce::Slider>("ReverbWetDry"));
-    ReverbComp.push_back(std::make_unique<juce::Slider>("ReverbCoefficient"));
-    
-    DistortionComp.push_back(std::make_unique<juce::Slider>("Distortion Amount"));
-    DistortionComp.push_back(std::make_unique<juce::Slider>("Distortion TypeVal"));
-    
-    draggableComponents.emplace_back("Filter" , std::move(FilterComp));
-    draggableComponents.emplace_back("Reverb" , std::move(ReverbComp));
-    draggableComponents.emplace_back("Distortion" , std::move(DistortionComp));
-    
-    
-    for(auto& comp : draggableComponents){
-        
-        addAndMakeVisible(comp);
-        
-    }
+
 }
 
 void MainComponent::visibilityChanged()
@@ -184,10 +165,9 @@ void MainComponent::resized()
     // If you add any child components, this is where you should
     // update their positions.
     
-    for(auto& comp : draggableComponents){
-        
-        comp.setBounds(100, 100, 100, 100);
-    }
+    ModelButton.setBounds(<#Rectangle<int> newBounds#>);
+    SynthEffectButton.setBounds();
+    MappingButton.setBounds(); 
     
     
 }

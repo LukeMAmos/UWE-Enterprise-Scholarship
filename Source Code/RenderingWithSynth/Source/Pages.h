@@ -236,11 +236,62 @@ class SynthEffectsPage : public juce::Component{
 
 public:
     
-    SynthEffectsPage();
+    SynthEffectsPage(){
+        
+        //Set up the UI components and emplace inside the respected draggable component
+        
+        FilterComp.push_back(std::make_unique<juce::Slider>("Filter Cutoff"));
+        FilterComp.push_back(std::make_unique<juce::Slider>("Filter Resonance"));
+        FilterComp.push_back(std::make_unique<juce::ComboBox>("FilterBiquadType"));
+        
+        ReverbComp.push_back(std::make_unique<juce::Slider>("Room Size"));
+        ReverbComp.push_back(std::make_unique<juce::Slider>("ReverbCutoff"));
+        ReverbComp.push_back(std::make_unique<juce::Slider>("ReverbWetDry"));
+        ReverbComp.push_back(std::make_unique<juce::Slider>("ReverbCoefficient"));
+        
+        DistortionComp.push_back(std::make_unique<juce::Slider>("Distortion Amount"));
+        DistortionComp.push_back(std::make_unique<juce::Slider>("Distortion TypeVal"));
+        
+        draggableComponents.emplace_back("Filter" , std::move(FilterComp));
+        draggableComponents.emplace_back("Reverb" , std::move(ReverbComp));
+        draggableComponents.emplace_back("Distortion" , std::move(DistortionComp));
+        
+        
+        for(auto& comp : draggableComponents){
+            
+            addAndMakeVisible(comp);
+            
+        }
+        
+    }
+    
+    resized(){
+        
+        for(auto& comp : draggableComponents){
+            
+            comp.setBounds(100, 100, 100, 100);
+        }
+        
+        
+    }
     
 private:
     
     CustomLookAndFeel customLookAndFeel ;
+    
+    //Vectors of components for the draggable componenets
+    
+    
+    std::vector<std::unique_ptr<juce::Component>> FilterComp;
+    std::vector<std::unique_ptr<juce::Component>> ReverbComp;
+    std::vector<std::unique_ptr<juce::Component>> DistortionComp;
+    
+    
+    //Vector of draggable components
+    std::vector<DraggableComponent> draggableComponents;
+    
+    
+    //Positions of the draggableComponents
     
 }
 
