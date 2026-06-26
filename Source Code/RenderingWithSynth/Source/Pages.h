@@ -27,8 +27,20 @@ class ModelPage :public juce::OpenGLAppComponent , public juce::MidiInputCallbac
     
 public:
     
-    ModelPage();
+    ModelPage(){
+        
+        openGLContext.setOpenGLVersionRequired(juce::OpenGLContext::openGL3_2);
+        
+        openGLContext.attachTo(*this);
+        
+        
+    }
     
+    ~ModelPage(){
+        
+        openGLContext.detach();
+        
+    }
     //OpenGL stuff
     void initialise() override {
         // Enable depth testing
@@ -141,45 +153,6 @@ public:
     
     void render() override{
         
-        //Reading midi messages to update rotational values each time the render function is called , could this be made more efficient such as checking for changes first and then updating the values?
-        {
-            juce::ScopedLock lock(midiMutex);
-            
-            for(const auto metadata : visMidiBuffer){
-                
-                auto message = metadata.getMessage();
-                
-                if(message.isController()){
-                    
-                    int ccNumber = message.getControllerNumber();
-                    int ccValue = message.getControllerValue(); // A value between 0 and 127 , we need to map this to be in radians between -pi and pi
-                    
-                    float radRotVal = ((ccValue / 127.0f) * juce::MathConstants<float>::twoPi) - juce::MathConstants<float>::pi;
-                    
-                    
-                    switch (ccNumber) {
-                        case CCValUD:
-                            rotationAngleUD = radRotVal;
-                            break;
-                            
-                        case CCValLR:
-                            rotationAngleLR = radRotVal;
-                            break;
-                            
-                        case CCValCW:
-                            rotationAngleCW = radRotVal;
-                            break;
-                            
-                        default:
-                            break;
-                    }
-                    
-                }
-                
-            }
-            
-            visMidiBuffer.clear();
-        }
         
         //Rendering the 3D model
         juce::gl::glClear(juce::gl::GL_COLOR_BUFFER_BIT | juce::gl::GL_DEPTH_BUFFER_BIT);
@@ -255,6 +228,8 @@ private:
     
 };
 
+
+
 //**-----------------------------------------------
 
 class SynthEffectsPage : public juce::Component{
@@ -268,6 +243,9 @@ private:
     CustomLookAndFeel customLookAndFeel ;
     
 }
+
+
+
 
 //**-----------------------------------------------
 

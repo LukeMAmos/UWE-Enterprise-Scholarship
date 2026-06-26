@@ -17,17 +17,12 @@
 #define CCValLR 2
 #define CCValCW 3
 
-class MainComponent  : public juce::OpenGLAppComponent , public juce::MidiInputCallback
+class MainComponent  : public juce::Component , public juce::MidiInputCallback
 {
 public:
     //==============================================================================
     MainComponent();
     ~MainComponent() override;
-    //==============================================================================
-    //OpenGL stuff
-    void initialise() override;
-    void render() override;
-    void shutdown() override;
     //==============================================================================
     //Midi stuff
     void handleIncomingMidiMessage(juce::MidiInput* source , const juce::MidiMessage& message) override;
@@ -49,21 +44,7 @@ private:
     
     CustomLookAndFeel customLookAndFeel ;
     
-    //Rendering 3D Models
-    tinyobj::attrib_t  meshAttrib;
-    std::vector<tinyobj::shape_t> shapes;
-    std::vector<float> flatVertices;
-    
-    float rotationAngleLR = 0.0f;
-    float rotationAngleUD = 0.0f;
-    float rotationAngleCW = 0.0f;
-    
-    GLuint vbo = 0;
-    GLuint vao = 0;
-    
-    std::unique_ptr<juce::OpenGLShaderProgram> shaderProgram;
 
-    float cubeColor[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
     
     //Audio
     juce::AudioDeviceManager audioDeviceManager;
