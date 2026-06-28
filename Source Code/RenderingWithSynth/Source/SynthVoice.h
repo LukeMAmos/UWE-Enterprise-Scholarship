@@ -34,7 +34,10 @@ public:
     
     void controllerMoved(int controllerNumber, int newValue) override;
     
-    void updateParameters(); 
+    void updateParameters(){
+        
+        //Do nothing atm
+    }
     
 private:
     

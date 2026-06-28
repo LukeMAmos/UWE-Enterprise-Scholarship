@@ -4,7 +4,7 @@
 //==============================================================================
 MainComponent::MainComponent()
 {
-    setSize (600, 400);
+    setSize (600, 600);
     setOpaque(true);
 
     //Custom look and feel
@@ -165,9 +165,10 @@ void MainComponent::resized()
     // If you add any child components, this is where you should
     // update their positions.
     
-    ModelButton.setBounds(<#Rectangle<int> newBounds#>);
-    SynthEffectButton.setBounds();
-    MappingButton.setBounds(); 
+    auto rectArea = getBounds().removeFromTop(40);
+    ModelButton.setBounds(rectArea.removeFromLeft(200));
+    SynthEffectButton.setBounds(rectArea.removeFromLeft(200));
+    MappingButton.setBounds(rectArea.removeFromLeft(200));
     
     
 }
