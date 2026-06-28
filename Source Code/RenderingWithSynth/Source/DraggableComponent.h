@@ -22,6 +22,7 @@ public:
         
     };
     
+    
     void mouseDown(const juce::MouseEvent& event) override {
         dragger.startDraggingComponent(this, event);
     }

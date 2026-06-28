@@ -5,6 +5,7 @@
 #include "SynthAudioSource.h"
 #include "LookAndFeel.h"
 #include "DraggableComponent.h"
+#include "Pages.h"
 
 //==============================================================================
 /*
@@ -46,7 +47,11 @@ private:
     
     //Buttons to switch views
     juce::TextButton ModelButton{"View Device"} , SynthEffectButton{"Synth"} , MappingButton{"Mappings"};
-
+    
+    //Pages
+    ModelPage modelPage;
+    //SynthEffectsPage synthEffectsPage;
+    MappingPage mappingPage; 
     
     //Audio
     juce::AudioDeviceManager audioDeviceManager;

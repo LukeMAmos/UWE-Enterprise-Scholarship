@@ -23,7 +23,7 @@
 //**-----------------------------------------------
 
 //Moved the original rendering structure to this block of code where the model rendering screen can be switched between
-class ModelPage :public juce::OpenGLAppComponent , public juce::MidiInputCallback {
+class ModelPage :public juce::OpenGLAppComponent {
     
 public:
     
@@ -252,24 +252,24 @@ public:
         DistortionComp.push_back(std::make_unique<juce::Slider>("Distortion Amount"));
         DistortionComp.push_back(std::make_unique<juce::Slider>("Distortion TypeVal"));
         
-        draggableComponents.emplace_back("Filter" , std::move(FilterComp));
-        draggableComponents.emplace_back("Reverb" , std::move(ReverbComp));
-        draggableComponents.emplace_back("Distortion" , std::move(DistortionComp));
+        draggableComponents.emplace_back(std::make_unique<DraggableComponent>("Filter" , std::move(FilterComp)));
+        draggableComponents.emplace_back(std::make_unique<DraggableComponent>("Reverb" , std::move(ReverbComp)));
+        draggableComponents.emplace_back(std::make_unique<DraggableComponent>("Distortion" , std::move(DistortionComp)));
         
         
         for(auto& comp : draggableComponents){
             
-            addAndMakeVisible(comp);
+            addAndMakeVisible(*comp);
             
         }
         
     }
     
-    resized(){
+    void resized(){
         
         for(auto& comp : draggableComponents){
             
-            comp.setBounds(100, 100, 100, 100);
+            comp->setBounds(100, 100, 100, 100);
         }
         
         
@@ -288,12 +288,12 @@ private:
     
     
     //Vector of draggable components
-    std::vector<DraggableComponent> draggableComponents;
+    std::vector<std::unique_ptr<DraggableComponent>> draggableComponents;
     
     
     //Positions of the draggableComponents
     
-}
+};
 
 
 
@@ -304,10 +304,13 @@ class MappingPage : public juce::Component{
     
 public:
     
-    MappingPage(); 
+    MappingPage(){
+        
+        //Constructor
+    }
     
 private:
     
     CustomLookAndFeel customLookAndFeel ;
     
-}
+};
