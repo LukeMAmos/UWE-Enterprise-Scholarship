@@ -334,7 +334,7 @@ public:
     
 private:
     
-    //For a biquad filter need to know maximum 2 samples prior
+    //For a biquad filter need to know maximum 2 samples priorr
     float x1 = 0.0f;
     float x2 = 0.0f;
 

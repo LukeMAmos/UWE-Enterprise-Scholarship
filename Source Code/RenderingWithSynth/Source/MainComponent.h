@@ -50,7 +50,7 @@ private:
     
     //Pages
     ModelPage modelPage;
-    //SynthEffectsPage synthEffectsPage;
+    SynthEffectsPage synthEffectsPage;
     MappingPage mappingPage; 
     
     //Audio

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="AFNboC" name="PrototypeNoisiTestingPlatform" projectType="guiapp"
+              useAppConfig="0" addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
+  <MAINGROUP id="CMaLtt" name="PrototypeNoisiTestingPlatform">
+    <GROUP id="{FBB7ED1F-97CB-BB78-29A5-5B49FA7D5D21}" name="Source">
+      <FILE id="Aqak2a" name="BluetoothSender.mm" compile="1" resource="0"
+            file="Source/BluetoothSender.mm"/>
+      <FILE id="lyROK2" name="BluetoothSender.h" compile="0" resource="0"
+            file="Source/BluetoothSender.h"/>
+      <FILE id="dSVmFC" name="LookAndFeel.h" compile="0" resource="0" file="Source/LookAndFeel.h"/>
+      <FILE id="h1YKME" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+      <FILE id="w3dM7W" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
+      <FILE id="FbS73F" name="MainComponent.cpp" compile="1" resource="0"
+            file="Source/MainComponent.cpp"/>
+    </GROUP>
+  </MAINGROUP>
+  <MODULES>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="PrototypeNoisiTestingPlatform"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="PrototypeNoisiTestingPlatform"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../../../../Documents/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../../Documents/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../../../Documents/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../../../Documents/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../../../Documents/JUCE/modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+  </EXPORTFORMATS>
+</JUCERPROJECT>

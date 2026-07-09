@@ -15,6 +15,35 @@ MainComponent::MainComponent()
     addAndMakeVisible(SynthEffectButton);
     addAndMakeVisible(MappingButton);
     
+    //On press Methods
+    ModelButton.onClick = [this](){
+        
+        modelPage.setVisible(true);
+        synthEffectsPage.setVisible(false);
+        mappingPage.setVisible(false);
+    };
+    
+    SynthEffectButton.onClick = [this](){
+        
+        modelPage.setVisible(false);
+        synthEffectsPage.setVisible(true);
+        mappingPage.setVisible(false);
+        
+    };
+    
+    MappingButton.onClick = [this](){
+        
+        modelPage.setVisible(false);
+        synthEffectsPage.setVisible(false);
+        mappingPage.setVisible(true);
+    };
+    
+    //Pages for switching between
+    addAndMakeVisible(modelPage);
+    addChildComponent(synthEffectsPage);
+    addChildComponent(mappingPage);
+    
+    
     setWantsKeyboardFocus(true);
     
     
@@ -166,9 +195,17 @@ void MainComponent::resized()
     // update their positions.
     
     auto rectArea = getBounds().removeFromTop(40);
+    auto pageArea = getBounds().removeFromBottom(560);
+    
+    //Button postions
     ModelButton.setBounds(rectArea.removeFromLeft(200));
     SynthEffectButton.setBounds(rectArea.removeFromLeft(200));
     MappingButton.setBounds(rectArea.removeFromLeft(200));
+    
+    //page positions
+    modelPage.setBounds(pageArea);
+    synthEffectsPage.setBounds(pageArea);
+    mappingPage.setBounds(pageArea);
     
     
 }
