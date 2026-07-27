@@ -10,4 +10,4 @@ As part of the UWE Enterprise Summer Scholarship 2026, I began research and deve
 ## Built using 
 - JUCE Framework 
 - C++
-- 
+- PlatformIO
