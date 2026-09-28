@@ -1,5 +1,4 @@
 # University of the West of England Enterprise Summer Scholarship 2026
-# UNFINISHED DOCUMENT
 
 As part of the UWE Enterprise Summer Scholarship 2026, I began research and development into a portable synthesis device which combined both software and hardware elements. Its intention being a device targeted at beginners, to introduce them into musical production. I began by first completing market research on current devices on the market with a similar intention, I then moved onto a design and feedback stage of building and improving the device. 
 
